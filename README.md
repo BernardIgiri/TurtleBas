@@ -23,7 +23,9 @@ Esc
     1. Download QBASIC 1.1 https://www.qbasic.net/en/qbasic-downloads/compiler/qbasic-interpreter.htm
     1. Extract archive
     1. Copy TURTLE.BAS into extracted folder
-    1. Launch DOSBox (you can go full screen with ALT+Enter or Option+Enter on Mac)
+    1. Launch DOSBox
+      * Notice that you can go full screen with ALT + Enter or Option + Enter on Mac
+      * You may also want to launch the key mapper with CTRL + F1
     1. Mount local folder to C drive DOSBox https://www.dosbox.com/wiki/MOUNT
     1. Change to C directory `c:`
     1. Run `QBASIC`
