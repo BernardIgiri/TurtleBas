@@ -6,19 +6,25 @@ CONST PenUpColor = 14
 CONST PenDownColor = 5
 CONST TextColor = 15
 
+EscKey$ = CHR$(27)
+UpKey$ = CHR$(0) + CHR$(72)
+DownKey$ = CHR$(0) + CHR$(80)
+LeftKey$ = CHR$(0) + CHR$(75)
+RightKey$ = CHR$(0) + CHR$(77)
+
 ' Variables
 isPenDown = 0
 px = ScreenWidth / 2
 py = ScreenHeight / 2
-a$ = CHR$(27)
+a$ = EscKey$
 
 ' Setup screen and display instructions
 SCREEN 8, , 0, 3
 CLS
 
 COLOR TextColor
-PRINT "Press Esc to exit"
-PRINT "Use WASD keys to move the cursor"
+PRINT "Press escape to exit"
+PRINT "Use arrow keys to move the cursor"
 PRINT "Press space bar to toggle pen"
 
 ' Copy instructions to drawing
@@ -28,13 +34,13 @@ DO
     ' Get keyboard input as ASCII character
     a$ = INKEY$
     SELECT CASE a$
-    CASE "w"
+    CASE UpKey$
         py = py - 1
-    CASE "a"
-        px = px - 1
-    CASE "s"
+    CASE DownKey$
         py = py + 1
-    CASE "d"
+    CASE LeftKey$
+        px = px - 1
+    CASE RightKey$
         px = px + 1
     CASE " "
         IF isPenDown = 1 THEN
@@ -57,7 +63,7 @@ DO
     PSET (px, py)
     ' Display active video page on screen
     PCOPY 0, 3
-LOOP UNTIL a$ = CHR$(27) ' Character 27 is the escape key
+LOOP UNTIL a$ = EscKey$
 ' Reset color
 COLOR 15
 

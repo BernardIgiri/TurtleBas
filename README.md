@@ -6,10 +6,10 @@ Turtle is a simple keyboard input drawing program.
 
 ## Controls
 
-WASD keys
+Arrow keys
 : move cursor
 
-Spacebar
+Space bar
 : toggle the pen
 
 Esc
